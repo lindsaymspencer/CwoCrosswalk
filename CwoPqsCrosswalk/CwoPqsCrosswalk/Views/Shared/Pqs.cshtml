@@ -5,15 +5,12 @@
     {
         <ul>@sec.Number @sec.Name</ul>
 
-        <table>
             @foreach (var sig in sec.Signatures)
-            {
-                <tr>
-                    <td>@sig.Key</td>
-                    <td><input class="form-check-input" asp-for="@sig.Value" /></td>
-                </tr>
-            }
-        </table>
+        {
+            <div class="checkboxes">
+                <label for="x"><input class="form-check-input" asp-for="@sig.Value" /> <span>@sig.Key</span></label>
+            </div>
+        }
     }
 
 </div>
