@@ -1,0 +1,27 @@
+﻿@model CwoPqsCrosswalk.Models.CwoPqs
+
+<div>
+    @foreach (var sec in Model.Sections)
+    {
+        <ul>@sec.Number @sec.Name</ul>
+
+        <table>
+            @foreach (var sig in sec.Signatures)
+            {
+                <tr>
+                    <td>@sig.Key</td>
+                    <td><input class="form-check-input" asp-for="@sig.Value" /></td>
+                </tr>
+            }
+        </table>
+    }
+
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
