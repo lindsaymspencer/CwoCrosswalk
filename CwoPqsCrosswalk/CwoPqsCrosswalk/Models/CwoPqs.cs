@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using System;
 
 namespace CwoPqsCrosswalk.Models
 {
@@ -75,5 +76,19 @@ namespace CwoPqsCrosswalk.Models
         }
 
         public string ToJson() => JsonSerializer.Serialize(this);
+   
+        public bool Export(string path)
+        {
+            try
+            {
+               Services.FileHelper.WriteOver(path, this.ToJson()); 
+            }
+            catch (Exception ex)
+            {
+                // TODO: Make this more informative.
+                return false;
+            }
+            return true;
+        }
     }
 }
