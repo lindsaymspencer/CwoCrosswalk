@@ -16,4 +16,9 @@
     <ProjectReference Include="..\CwoPqsCrosswalk\CwoPqsCrosswalk.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
