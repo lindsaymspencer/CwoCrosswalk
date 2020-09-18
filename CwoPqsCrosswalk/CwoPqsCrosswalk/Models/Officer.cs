@@ -16,5 +16,7 @@ namespace CwoPqsCrosswalk.Models
 
         public CwoPqs TwoBravo { get; set; } = CwoPqs.NewTwoBravo();
 
+        public CwoPqs TwoAlpha { get; set; } = CwoPqs.NewTwoAlpha();
+
     }
 }
