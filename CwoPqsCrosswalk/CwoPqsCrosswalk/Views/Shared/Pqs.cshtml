@@ -5,7 +5,7 @@
     {
         <ul>@sec.Number @sec.Name</ul>
 
-            @foreach (var sig in sec.Signatures)
+        @foreach (var sig in sec.Signatures)
         {
             <div class="checkboxes">
                 <label for="x"><input class="form-check-input" asp-for="@sig.Value" /> <span>@sig.Key</span></label>
@@ -13,10 +13,6 @@
         }
     }
 
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
