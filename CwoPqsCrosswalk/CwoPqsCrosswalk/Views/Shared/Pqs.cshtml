@@ -3,16 +3,41 @@
 <div>
     @foreach (var sec in Model.Sections)
     {
-        <ul>@sec.Number @sec.Name</ul>
+        <h5>@sec.Number @sec.Name</h5>
 
-        @foreach (var sig in sec.Signatures)
-        {
-            <div class="checkboxes">
-                <label for="x"><input class="form-check-input" asp-for="@sig.Value" /> <span>@sig.Key</span></label>
-            </div>
-        }
+        <table>
+            @{
+                int col1 = 0;
+                int col2 = 0;
+                <tr>
+                    <td width="50%">
+                        @foreach (var sig in sec.Signatures)
+                        {
+                            if (@col1 % 2 == 0)
+                            {<div class="checkboxes">
+                                    @Html.CheckBoxFor(model => sig.Value)
+                                    @Html.Label(sig.Key)
+                                </div>
+                            }
+                            col1 = col1 + 1;
+                        }
+                    </td>
+                    <td width="50%">
+                        @foreach (var sig in sec.Signatures)
+                        {
+                            if (@col2 % 2 != 0)
+                            {<div class="checkboxes">
+                                    @Html.CheckBoxFor(model => sig.Value)
+                                    @Html.Label(sig.Key)
+                                </div>
+                            }
+                            col2 = col2 + 1;
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
     }
-
 </div>
 
 @section Scripts {
