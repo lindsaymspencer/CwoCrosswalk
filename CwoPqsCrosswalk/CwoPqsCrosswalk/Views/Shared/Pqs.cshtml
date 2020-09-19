@@ -1,42 +1,37 @@
 ﻿@model CwoPqsCrosswalk.Models.CwoPqs
 
 <div>
-    @foreach (var sec in Model.Sections)
+    @foreach (var chapter in Model.Sections)
     {
-        <h5>@sec.Number @sec.Name</h5>
-
-        <table>
-            @{
-                int col1 = 0;
-                int col2 = 0;
-                <tr>
-                    <td width="50%">
-                        @foreach (var sig in sec.Signatures)
-                        {
-                            if (@col1 % 2 == 0)
-                            {<div class="checkboxes">
-                                    @Html.CheckBoxFor(model => sig.Value)
-                                    @Html.Label(sig.Key)
-                                </div>
-                            }
-                            col1 = col1 + 1;
-                        }
-                    </td>
-                    <td width="50%">
-                        @foreach (var sig in sec.Signatures)
-                        {
-                            if (@col2 % 2 != 0)
-                            {<div class="checkboxes">
-                                    @Html.CheckBoxFor(model => sig.Value)
-                                    @Html.Label(sig.Key)
-                                </div>
-                            }
-                            col2 = col2 + 1;
-                        }
-                    </td>
-                </tr>
+        <h3 class="w3-text-blue">@chapter.Number @chapter.Name</h3>
+        int i = 0;
+        <div class="w3-container w3-clear w3-cell">
+            @foreach (var signature in chapter.Signatures)
+            {
+                @if (i % 2 == 0)
+                {
+                    <p>
+                        @Html.CheckBoxFor(model => signature.Value)
+                        @Html.Label("", signature.Key)
+                    </p>
+                }
+                i++;
             }
-        </table>
+        </div>
+        i = 0;
+        <div class="w3-container w3-clear w3-cell">
+            @foreach (var signature in chapter.Signatures)
+            {
+                @if (i % 2 == 1)
+                {
+                    <p>
+                        @Html.CheckBoxFor(model => signature.Value)
+                        @Html.Label("", signature.Key)
+                    </p>
+                }
+                i++;
+            }
+        </div>
     }
 </div>
 

@@ -10,32 +10,32 @@
     @Html.DisplayFor(model => model.LastName)
 </h1>
 
-<div class="container">
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#twoAlpha">2A</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#twoBravo">2B</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="twoAlpha" class="container tab-pane active">
-            <br>
-            <h3>NAVEDTRA 43357-2A - November 2016</h3>
-            @{
-                Html.RenderPartial("Pqs", Model.TwoAlpha);
-            }
-        </div>
-        <div id="twoBravo" class="container tab-pane active">
-            <br>
-            <h3>NAVEDTRA 43357-2B - 14 March 2020</h3>
-            @{
-                Html.RenderPartial("Pqs", Model.TwoBravo);
-            }
-        </div>
-    </div>
+<div class="w3-bar w3-indigo">
+    <button class="w3-bar-item w3-button" onclick="openCity('London')">2A</button>
+    <button class="w3-bar-item w3-button" onclick="openCity('Paris')">2B</button>
 </div>
 
+<div id="London" class="w3-container city">
+    <h2 class="w3-text-indigo">NAVEDTRA 43357-2A - November 2016</h2>      
+    @{
+        await Html.RenderPartialAsync("Pqs", Model.TwoAlpha);
+    }
+</div>
+
+<div id="Paris" class="w3-container city" style="display:none">
+    <h2 class="w3-text-indigo">NAVEDTRA 43357-2B - 14 March 2020</h2>
+    @{
+        await Html.RenderPartialAsync("Pqs", Model.TwoBravo);
+    }
+</div>
+
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "block";
+}
+</script>

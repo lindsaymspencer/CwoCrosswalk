@@ -14,19 +14,19 @@ namespace CwoPqsCrosswalk.Models
             "Security Fundamentals;103;1;2;3;4;5;6;7;8",
             "Leadership Fundamentals;104;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20",
             "Terminology Fundamentals;105;1",
-            "U.S. Navy Org. And Naval/Joint Platforms;106;1;2;3;4;5;6.a;6.b;6.c;6.d;6.e;6.f;6.g;6.h;6.i;6.j;7;8;9;10;11;12",
+            "U.S. Navy Org. and Naval/Joint Platforms;106;1;2;3;4;5;6.a;6.b;6.c;6.d;6.e;6.f;6.g;6.h;6.i;6.j;7;8;9;10;11;12",
             "Navy Planning Process Fundamentals;107;1;2;3;4;5;6;7;8;9;10;11;12;13",
-            "Roe And Authorities Fundamentals;108;1;2;3;4;5;6;7",
+            "Roe and Authorities Fundamentals;108;1;2;3;4;5;6;7",
             "Intelligence Oversight Fundamentals;109;1;2;3;4;5;6",
             "Radio Prop and Signal Char. Fundamentals;110;1;2;3;4;5;6;7;8;9;10;11",
             "Radar Fundamentals;111;1;2;3;4;5;6;7;8;9",
             "Electronic Warfare Fundamentals;112;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17",
-            "Antiship Ship Missile Defense (Asmd) Fundamentals;113;1;2;3;4;5;6;7;8;9;10",
-            "Countering Intelligence, Surveillance, Reconnaissance, and Targeting (C-Isrt) Fundamentals;114;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16",
+            "Antiship Ship Missile Defense (ASMD) Fundamentals;113;1;2;3;4;5;6;7;8;9;10",
+            "Countering Intelligence, Surveillance, Reconnaissance, and Targeting (C-ISRT) Fundamentals;114;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16",
             "National Collection Management Fundamentals;115;1;2;3;4;5;6;7;8;9;10;11",
-            "Distributed Signals Intelligence (Sigint) Operations (Dso) Fundamentals;116;1;2;3;4;5;6;7;8",
-            "Direction Finding And Geolocation Fundamentals;117;1;2;3;4;5;6;7;8",
-            "Signal Intelligence (Sigint) Reporting Fundamentals;118;1;2;3;4;5;6;7",
+            "Distributed Signals Intelligence (SIGINT) Operations (DSO) Fundamentals;116;1;2;3;4;5;6;7;8",
+            "Direction Finding and Geolocation Fundamentals;117;1;2;3;4;5;6;7;8",
+            "Signal Intelligence (SIGINT) Reporting Fundamentals;118;1;2;3;4;5;6;7",
             "Cryptologic Warfare Systems Fundamentals;119;1;2;3;4;5;6;7",
             "Communications Fundamentals;120;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15",
             "Networking Fundamentals;121;1;2;3;4;5;6;7;8;9;10;11",
@@ -34,12 +34,12 @@ namespace CwoPqsCrosswalk.Models
             "Cyberspace Operations Fundamentals;123;1;2;3;4;5;6;7;8;9",
             "National/Theater Level Support Fundamentals;124;1;2;3;4;5;6",
             "Fleet Cryptologic Operations Fundamentals;125;1;2;3;4;5;6;7;8;9;10",
-            "Naval Special Warfare Tactical Information Operations (Tio) Fundamentals;126;1;2;3;4;5;6",
+            "Naval Special Warfare Tactical Information Operations (TIO) Fundamentals;126;1;2;3;4;5;6",
             "Information Operations Fundamentals;127;1;2;3;4;5;6;7",
-            "Military Deception (Mildec) Fundamentals;128;1;2;3;4;5;6;7;8;9;10;11;12",
-            "Military Information Support Operations (Miso) Fundamentals;129;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15",
-            "Operations Security (Opsec) Fundamentals;130;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16",
-            "Publications And Mission Associated Directives Fundamentals;131;1;2;3;4;5"
+            "Military Deception (MILDEC) Fundamentals;128;1;2;3;4;5;6;7;8;9;10;11;12",
+            "Military Information Support Operations (MISO) Fundamentals;129;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15",
+            "Operations Security (OPSEC) Fundamentals;130;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16",
+            "Publications and Mission Associated Directives Fundamentals;131;1;2;3;4;5"
         };
 
         private readonly string[] TwoAlphaSectionsByLine =
@@ -76,7 +76,7 @@ namespace CwoPqsCrosswalk.Models
             "Publications and Mission Associated Directives;130;1;2;3;4;5",
             "Communications – General – Information Warfare;131;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28",
             "Naval Special Warfare Tactical Information Operations (TIO);132;1;2;3;4;5;6;7;8;9;10;11",
-            "Administrative, Readiness And Logistical Reporting Fundamentals;133;1;2;3;4;5;6;7;8"
+            "Administrative, Readiness and Logistical Reporting Fundamentals;133;1;2;3;4;5;6;7;8"
         };
 
     public List<Section> Sections { get; set; }
@@ -129,7 +129,7 @@ namespace CwoPqsCrosswalk.Models
             {
                 Services.FileHelper.WriteOver(path, this.ToJson());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // TODO: Make this more informative.
                 return false;
